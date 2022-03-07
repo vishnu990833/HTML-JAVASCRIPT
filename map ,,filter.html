@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		var marks =[35,40,45,50,55,60]
+		var y= marks.map(function(x){
+			if(x==40){return x}
+		})
+		console.log(y);
+
+		//map returns that index and gives total length of the array
+
+		var z =marks.filter(function(x){
+			if(x==40){return x;}
+		})
+		console.log(z)
+
+		//filter returns that value is in the array or not and it returns total length of that value
+	</script>
+	
+</body>
+</html>
