@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href=" 	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        section{
+            width: 90%;
+            height:auto;
+            margin: auto;
+        }
+        h1{
+            margin:50px auto;
+            width:200px;
+        }
+        table{
+            width:100%;
+            margin:10px 0px 2px 6px;
+            table-layout: auto;
+            color: blue;
+            text-align: center;
+            background-color: lemonchiffon;
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+        table tr{
+            border: 2px solid black;
+        }
+        table tr th,td{
+            padding: 10px 5px;
+        }
+        td:first-child{
+            width: 100px;
+        }
+        td input{
+            margin-left: 30px;
+        }
+        button{
+            padding: 8px 10px;
+            margin:10px;
+            border:none;
+            outline: none;
+            background: lightgoldenrodyellow;
+            color: darkblue;
+            font-weight: bold;
+            display: none;
+        }
+        label{
+            cursor:pointer;
+        }
+        input{
+            width:20px;
+            height: 20px;
+            float: left;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div>
+        <scetion>
+            <h1> check box table</h1>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <td><label for="SelectAll"><input type="checkbox" id="SelectAll" name=""/>Select All</label></td>
+                        <td>s.no</td>
+                        <td>name</td>
+                        <td>last name</td>
+                        <td>E-mail</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="vis">
+                        <td><input type="checkbox" class="select" onclick="buttonStatus()" value="one" name=" "/></td>
+                        <td>1</td>
+                        <td>vishnu</td>
+                        <td>v</td>
+                        <td>veneiadu@E-mail</td>
+                        <td>remove </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="vis">
+                        <td><input type="checkbox" class="select" onclick="buttonStatus()"  value="two" name=" "/></td>
+                        <td>1</td>
+                        <td>vishnu</td>
+                        <td>v</td>
+                        <td>veneiadu@E-mail</td>
+                        <td>remove </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="vis">
+                        <td><input type="checkbox" class="select" onclick="buttonStatus()"  value="three" name=" "/></td>
+                        <td>1</td>
+                        <td>vishnu</td>
+                        <td>v</td>
+                        <td>veneiadu@E-mail</td>
+                        <td>remove </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="vis">
+                        <td><input type="checkbox" class="select" onclick="buttonStatus()"  value="four" name=" "/></td>
+                        <td>1</td>
+                        <td>vishnu</td>
+                        <td>v</td>
+                        <td>veneiadu@E-mail</td>
+                        <td>remove </td>
+                    </tr>
+                </tbody>
+                
+                
+                
+            </table>
+            <button id="demo" onclick="vishnu()">Delete</button>
+        </scetion>
+    </div>
+    <script>
+        let main = document.getElementById("SelectAll");
+        let select = document.getElementsByClassName('select');
+       
+
+        main.onclick = () => {
+            if(main.checked == true)
+            {
+                for(let i=0;i<select.length;i++)
+                {
+                    select[i].checked= true;
+                    document.querySelector('button').style.display = 'block';
+                }
+            }
+            else
+            {
+                for(let i = 0;i<select.length;i++)
+                {
+                    select[i].checked=false;
+                    document.querySelector('button').style.display = 'none';
+                }
+            }
+        }
+
+
+        var index,table =document.getElementById("table");
+        for(var i = 0;i<table.rows.length; i++)
+        {
+            table.rows[i].cells[3].onclick = function()
+            {
+                index=this.parentElement.rowIndex;
+                // table.deleteRow(index);
+                console.log(index);
+            }
+        }
+
+
+
+    //   function buttonStatus(){
+    //       if(select.length){
+    //         document.getElementById('demo').style.display = 'block';
+    //         console.log(select)
+    //         select.forEach(e => {
+    //             console.log(e)
+    //         });
+    //       }else{
+    //         document.getElementById('demo').style.display = 'none';
+    //         console.log(select)
+    //       }
+    //   }
+       function vishnu(){
+        var x = document.getElementsByClassName("vis");
+        
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if(x[i].getElementsByClassName("select")[0].checked)
+            x[i].style.display = 'none';
+        
+        }
+            
+        }
+        
+    </script>
+</body>
+</html>
