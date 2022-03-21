@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        ///////////////////with the help of for loop///////////////
+   const arr=['vishnu','vennapusa','reddy'];
+   const myObj = {};
+   for(i=0;i<arr.length;i++){
+       myObj[i] =arr[i];
+   }
+   console.log(myObj)
+
+
+   /////////////////////////with the help of object assign /////////////////////////////////////
+   const brr=['vishnu','vennapusa','reddy'];
+   const obj= Object.assign({},brr);
+   console.log(obj)
+   ///////////////////////////with the help of spread operator/////////////////////////////
+   const crr=['vishnu','vennapusa','reddy'];
+   const object={...crr};
+   console.log(object)
+
+    </script>
+
+
+
+</body>
+</html>
