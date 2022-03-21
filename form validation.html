@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-image: url("https://th.bing.com/th/id/R.9e57b33d3a413c33dfedabc81b428926?rik=btOtY7UOvluMFg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f84905-Earth-universe.jpg&ehk=SA000Bx0yx7thR7BA94qRe2AiEb6RlzIdeTQUIjw3wI%3d&risl=&pid=ImgRaw&r=0");
+        }
+        h1{
+            color: chartreuse;
+        }
+        a{
+            text-decoration: none;
+            color: khaki;
+        }
+    </style>
+    <script>
+        function validationForm(){
+            let x= document.forms["myform"]["fname"].value;
+            let y =document.forms["myform"]["lname"].value;
+            let z = document.forms["myform"]["Number"].value;
+            let a = document.forms["myform"]["password"].value;
+
+            if(x.length<5 || y.length<5){
+                alert("fname and last name must be enter")
+                return false;
+            }
+            else if(z.length<9){
+                alert("number must be 10 digits")
+                return false;
+            }
+            else if(a.length<8){
+                alert("password should me contain more then 8 characters");
+                return false;
+            }
+        }
+
+    </script>
+    
+    
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form name="myform" action="calculator.html" onsubmit="return validationForm()"  method="post">
+    <h1>VISHNU FORM</h1><br><br>
+    <input type="text" name="fname" placeholder="first name" /><br><br>
+    <input type="text" name="lname" placeholder="last name" /><br><br>
+    <input type="email" name="email" placeholder="E-mail" /><br><br>
+    <input type="password" name="password" placeholder="password" /><br><br>
+    <input type="number" name="Number"  placeholder="phone number" /><br><br>
+    <input type="date" placeholder="Date" /><br><br>
+    
+   <label for="country">Country</label>
+   <select id="country">
+       <option value="india">india</option>
+       <option value="america">america</option>
+       <option value="austrila">austrila</option>
+       <option value="canada">canada</option>
+
+   </select><br><br>
+   <input type="submit" value="submit" ><br><br>
+   Already user? <a href="#">log in</a>
+</form>
+</center>
+</body>
+</html>
